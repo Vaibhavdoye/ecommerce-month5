@@ -22,7 +22,7 @@ function Payment({ order, onPaymentSuccess }) {
       setMessage("");
 
       const response = await fetch(
-        `http://localhost:5000/api/orders/pay/${order._id}`,
+        `https://ecommerce-month5.onrender.com/api/orders/pay/${order._id}`,
         {
           method: "PUT",
           headers: {

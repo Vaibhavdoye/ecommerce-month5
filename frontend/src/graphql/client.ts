@@ -9,7 +9,7 @@ import { getMainDefinition } from "@apollo/client/utilities";
 import { createClient } from "graphql-ws";
 
 const httpLink = new HttpLink({
-  uri: "http://localhost:5000/graphql",
+  uri: "https://ecommerce-month5.onrender.com/graphql",
 });
 
 const wsLink = new GraphQLWsLink(

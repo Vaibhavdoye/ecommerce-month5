@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const API_URL = "http://localhost:5000/api/users";
+const API_URL = "https://ecommerce-month5.onrender.com/api/users";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -39,7 +39,7 @@ const [profile, setProfile] = useState(null);
 const token = data.token;
 
 const profileResponse = await fetch(
-  "http://localhost:5000/api/users/profile",
+  "https://ecommerce-month5.onrender.com/api/users/profile",
   {
     method: "GET",
     headers: {

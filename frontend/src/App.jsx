@@ -5,7 +5,7 @@ import Login from "./Login";
 import OrderHistory from "./OrderHistory";
 import Checkout from "./Checkout";
 import Payment from "./Payment";
-const API_URL = "http://localhost:5000/api/products";
+const API_URL = "https://ecommerce-month5.onrender.com/api/products";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -38,7 +38,7 @@ function App() {
   const fetchCart = async () => {
     try {
       const response = await fetch(
-        "http://localhost:5000/api/cart",
+        "https://ecommerce-month5.onrender.com/api/cart",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -85,7 +85,7 @@ useEffect(() => {
   const fetchUserProfile = async () => {
     try {
       const response = await fetch(
-        "http://localhost:5000/api/users/profile",
+        "https://ecommerce-month5.onrender.com/api/users/profile",
         {
           method: "GET",
           headers: {
@@ -280,7 +280,7 @@ const handleDelete = async (id) => {
   }
 
   try {
-    const response = await fetch("http://localhost:5000/api/cart/add", {
+    const response = await fetch("https://ecommerce-month5.onrender.com/api/cart/add", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -324,7 +324,7 @@ setCart(formatCartItems(data.cart.items));
 
   try {
     const response = await fetch(
-      `http://localhost:5000/api/cart/increase/${id}`,
+      `https://ecommerce-month5.onrender.com/api/cart/increase/${id}`,
       {
         method: "PUT",
         headers: {
@@ -373,7 +373,7 @@ const decreaseQuantity = async (id) => {
 
   try {
     const response = await fetch(
-      `http://localhost:5000/api/cart/decrease/${id}`,
+      `https://ecommerce-month5.onrender.com/api/cart/decrease/${id}`,
       {
         method: "PUT",
         headers: {
@@ -409,7 +409,7 @@ const removeFromCart = async (id) => {
 
   try {
     const response = await fetch(
-      `http://localhost:5000/api/cart/remove/${id}`,
+      `https://ecommerce-month5.onrender.com/api/cart/remove/${id}`,
       {
         method: "DELETE",
         headers: {

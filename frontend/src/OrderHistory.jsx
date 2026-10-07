@@ -17,7 +17,7 @@ function OrderHistory() {
 
       try {
         const response = await fetch(
-          "http://localhost:5000/api/orders",
+          "https://ecommerce-month5.onrender.com/api/orders",
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -54,7 +54,7 @@ const handlePayment = async (orderId) => {
 
   try {
     const response = await fetch(
-      `http://localhost:5000/api/orders/pay/${orderId}`,
+      `https://ecommerce-month5.onrender.com/api/orders/pay/${orderId}`,
       {
         method: "PUT",
         headers: {

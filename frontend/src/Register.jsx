@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const API_URL = "http://localhost:5000/api/users";
+const API_URL = "https://ecommerce-month5.onrender.com/api/users";
 
 function Register() {
   const [name, setName] = useState("");

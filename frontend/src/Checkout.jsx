@@ -32,7 +32,7 @@ const [loading, setLoading] = useState(false);
   console.log("Cart:", cart);
 
   const response = await fetch(
-        "http://localhost:5000/api/orders/checkout",
+        "https://ecommerce-month5.onrender.com/api/orders/checkout",
         {
           method: "POST",
           headers: {

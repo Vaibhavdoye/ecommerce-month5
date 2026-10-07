@@ -14,7 +14,7 @@ const Checkout = lazy(() => import("./Checkout"));
 import Payment from "./Payment";
 import { useSubscription } from "@apollo/client/react";
 
-const API_URL = "http://localhost:5000/api/products";
+const API_URL = "https://ecommerce-month5.onrender.com/api/products";
 const GET_PRODUCTS = gql`
   query GetProducts {
     products {
@@ -137,7 +137,7 @@ const enableNotifications = async () => {
       applicationServerKey: urlBase64ToUint8Array(publicKey),
     });
 
-    const response = await fetch("http://localhost:5000/api/notifications/subscribe", {
+    const response = await fetch("https://ecommerce-month5.onrender.com/api/notifications/subscribe", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -201,7 +201,7 @@ const [paymentOrder, setPaymentOrder] = useState<Order | null>(null)
   const fetchCart = async () => {
     try {
       const response = await fetch(
-        "http://localhost:5000/api/cart",
+        "https://ecommerce-month5.onrender.com/api/cart",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -248,7 +248,7 @@ useEffect(() => {
   const fetchUserProfile = async () => {
     try {
       const response = await fetch(
-        "http://localhost:5000/api/users/profile",
+        "https://ecommerce-month5.onrender.com/api/users/profile",
         {
           method: "GET",
           headers: {
@@ -509,7 +509,7 @@ const token = localStorage.getItem("token");
   }
 
   try {
-    const response = await fetch("http://localhost:5000/api/cart/add", {
+    const response = await fetch("https://ecommerce-month5.onrender.com/api/cart/add", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -553,7 +553,7 @@ const token = localStorage.getItem("token");
 
   try {
     const response = await fetch(
-      `http://localhost:5000/api/cart/increase/${id}`,
+      `https://ecommerce-month5.onrender.com/api/cart/increase/${id}`,
       {
         method: "PUT",
         headers: {
@@ -602,7 +602,7 @@ const token = localStorage.getItem("token");
 
   try {
     const response = await fetch(
-      `http://localhost:5000/api/cart/decrease/${id}`,
+      `https://ecommerce-month5.onrender.com/api/cart/decrease/${id}`,
       {
         method: "PUT",
         headers: {
@@ -638,7 +638,7 @@ const token = localStorage.getItem("token");
 
   try {
     const response = await fetch(
-      `http://localhost:5000/api/cart/remove/${id}`,
+      `https://ecommerce-month5.onrender.com/api/cart/remove/${id}`,
       {
         method: "DELETE",
         headers: {
