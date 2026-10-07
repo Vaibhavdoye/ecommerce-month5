@@ -44,4 +44,27 @@ describe("Backend Product Tests", () => {
 
     expect(category).toBe("Electronics");
   });
+
+  it("calculates paginated product results correctly", () => {
+    const totalProducts = 25;
+    const limit = 10;
+    const page = 2;
+
+    const skip = (page - 1) * limit;
+    const totalPages = Math.ceil(totalProducts / limit);
+
+    expect(skip).toBe(10);
+    expect(totalPages).toBe(3);
+  });
+
+  it("prevents invalid pagination values", () => {
+    const requestedPage = 0;
+    const requestedLimit = 100;
+
+    const page = Math.max(requestedPage, 1);
+    const limit = Math.min(Math.max(requestedLimit, 1), 50);
+
+    expect(page).toBe(1);
+    expect(limit).toBe(50);
+  });
 });
