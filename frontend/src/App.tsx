@@ -282,6 +282,16 @@ useEffect(() => {
   
  
 const fetchProducts = async () => {
+    const cachedProducts = localStorage.getItem("cachedProducts");
+
+  if (cachedProducts) {
+    try {
+      setProducts(JSON.parse(cachedProducts) as Product[]);
+      setLoading(false);
+    } catch {
+      localStorage.removeItem("cachedProducts");
+    }
+  }
   try {
     const result = await client.query({
       query: GET_PRODUCTS,
@@ -758,6 +768,7 @@ if (loading) {
 }
   return (
     <div className="app">
+      <main>
       <nav className="top-nav">
   <div className="nav-logo">
     E-Shop
@@ -973,10 +984,12 @@ onClick={() => increaseQuantity(item._id)}>
     onChange={(event) => setSearchTerm(event.target.value)}
   />
 
-  <select
-    value={selectedCategory}
-    onChange={(event) => setSelectedCategory(event.target.value)}
-  >
+ <label htmlFor="category-filter">Category</label>
+<select
+  id="category-filter"
+  value={selectedCategory}
+  onChange={(event) => setSelectedCategory(event.target.value)}
+>
     {categories.map((category) => (
       <option key={category} value={category}>
         {category}
@@ -1073,8 +1086,9 @@ onClick={() => increaseQuantity(item._id)}>
   )}
    </>
 )}
-
+ </main>
     </div>
+      
     
   );
 }
