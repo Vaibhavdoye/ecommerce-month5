@@ -707,19 +707,40 @@ background: #0056b3;
   background: #c93636;
 }
 
+
 @media (max-width: 600px) {
   .top-nav {
-    padding: 14px;
+    padding: 10px 8px;
+    gap: 6px;
+    flex-wrap: nowrap;
   }
 
   .nav-logo {
-    font-size: 18px;
+    font-size: 16px;
+    line-height: 1.1;
+    flex-shrink: 0;
+  }
+
+  .nav-actions {
+    gap: 6px;
+    flex-wrap: nowrap;
+    min-width: 0;
   }
 
   .user-name {
     display: none;
   }
+
+  .login-nav-btn,
+  .register-nav-btn,
+  .logout-btn,
+  .my-orders-btn {
+    padding: 9px 8px;
+    font-size: 12px;
+    flex-shrink: 1;
+  }
 }
+
 .clear-filter-btn {
   background: #2563eb;
 
