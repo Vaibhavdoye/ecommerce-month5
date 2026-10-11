@@ -30,7 +30,7 @@ export const resolvers = {
         description: args.description,
         image: args.image,
       });
-pubsub.publish("PRODUCT_CREATED", { productCreated: product });
+await pubsub.publish("PRODUCT_CREATED", { productCreated: product });
       return product;
     },
 
